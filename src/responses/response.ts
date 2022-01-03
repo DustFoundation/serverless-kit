@@ -9,7 +9,7 @@ export abstract class Response {
 
   constructor(options: ResponseOptions) {
     this.statusCode = options.status;
-    this.body = JSON.stringify(options.body);
+    this.body = typeof options.body === 'string' ? options.body : JSON.stringify(options.body);
     this.headers = Object.assign(options.headers ?? {}, {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credentials': true,
