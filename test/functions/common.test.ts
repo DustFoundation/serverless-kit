@@ -17,7 +17,7 @@ describe('functions/common', () => {
       { symbol: 'btc', price: 100_000 },
       { symbol: 'btc', price: 50_000 },
       { symbol: 'eth', price: 10_000 },
-      { symbol: 'eth', price: 5_000 },
+      { symbol: 'eth', price: 5000 },
     ];
 
     expect(groupBy(array, 'symbol')).eql({
