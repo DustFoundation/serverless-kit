@@ -1,6 +1,6 @@
 import { APIGatewayProxyResult } from 'aws-lambda';
 
-export abstract class Response {
+export class Response {
   public statusCode: ResponseOptions['status'];
   public body: string;
   public headers?: ResponseOptions['headers'];

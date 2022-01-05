@@ -11,3 +11,4 @@ export * from './responses/gateway-timeout';
 export * from './responses/internal-server-error';
 export * from './responses/not-found';
 export * from './responses/success';
+export * from './responses/unauthorized';

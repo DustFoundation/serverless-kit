@@ -7,7 +7,7 @@ Serverless Utils for fast development.
 Install via npm:
 
 ```sh
-npm install --save github:dustfoundation/lovely-serverless-utils#v0.0.3
+npm install --save github:dustfoundation/lovely-serverless-utils#v0.0.4
 ```
 
 ## Features
@@ -25,6 +25,7 @@ Common:
 
 * [Success](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/responses/success.ts) [200-206]
 * [Bad Request](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/responses/bad-request.ts) [400]
+* [Unauthorized](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/responses/unauthorized.ts) [401]
 * [Not Found](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/responses/not-found.ts) [404]
 * [Forbidden](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/responses/forbidden.ts) [403]
 * [Internal Server Error](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/responses/internal-server-error.ts) [500]
