@@ -1,6 +1,6 @@
 {
   "name": "lovely-serverless-utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": "https://github.com/DustFoundation/lovely-serverless-utils",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
