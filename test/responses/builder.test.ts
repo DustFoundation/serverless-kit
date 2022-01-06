@@ -9,9 +9,9 @@ describe('responses/builder', () => {
     const _multiValueHeaders = { 'test-multi-value-header': [1] };
 
     const { statusCode, body, headers, multiValueHeaders, isBase64Encoded } = ResponseBuilder(200)
-      .setBody({ name: 'Elon' })
-      .setHeaders({ 'test-header': 1 })
-      .setMultiValueHeaders({ 'test-multi-value-header': [1] })
+      .setBody(_body)
+      .setHeaders(_headers)
+      .setMultiValueHeaders(_multiValueHeaders)
       .setBase64Encoded();
 
     expect(statusCode).eql(200);
