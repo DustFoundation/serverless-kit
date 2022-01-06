@@ -75,7 +75,7 @@ import { ResponseBuilder } from 'lovely-serverless-utils';
 export class CustomResponse extends ResponseBuilder {
   constructor() {
     super(000); // status code
-    this.setBody(); // default body
+    this.setBody(...); // default body
   }
 }
 ```
