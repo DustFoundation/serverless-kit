@@ -1,8 +1,5 @@
-import { ResponseBuilder } from '../..';
+import { ResponseBuilder, ResponseBuilderType } from '../..';
 
-export class NotFoundResponse extends ResponseBuilder {
-  constructor() {
-    super(404);
-    this.setBody({ message: 'NotFound' });
-  }
+export function NotFoundResponse(): ResponseBuilderType {
+  return ResponseBuilder(404).setBody('Not Found');
 }

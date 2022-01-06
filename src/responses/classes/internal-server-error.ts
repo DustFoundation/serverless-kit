@@ -1,8 +1,5 @@
-import { ResponseBuilder } from '../..';
+import { ResponseBuilder, ResponseBuilderType } from '../..';
 
-export class InternalServerErrorResponse extends ResponseBuilder {
-  constructor() {
-    super(500);
-    this.setBody({ message: 'Internal Server Error' });
-  }
+export function InternalServerErrorResponse(): ResponseBuilderType {
+  return ResponseBuilder(500).setBody('Internal Server Error');
 }

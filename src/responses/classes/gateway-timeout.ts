@@ -1,8 +1,5 @@
-import { ResponseBuilder } from '../..';
+import { ResponseBuilder, ResponseBuilderType } from '../..';
 
-export class GatewayTimeoutResponse extends ResponseBuilder {
-  constructor() {
-    super(504);
-    this.setBody({ message: 'Timeout' });
-  }
+export function GatewayTimeoutResponse(): ResponseBuilderType {
+  return ResponseBuilder(504).setBody('Timeout');
 }

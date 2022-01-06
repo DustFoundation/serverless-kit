@@ -1,8 +1,5 @@
-import { ResponseBuilder } from '../..';
+import { ResponseBuilder, ResponseBuilderType } from '../..';
 
-export class SuccessResponse extends ResponseBuilder {
-  constructor() {
-    super(200);
-    this.setBody('Ok');
-  }
+export function SuccessResponse(): ResponseBuilderType {
+  return ResponseBuilder(200).setBody('Ok');
 }

@@ -7,7 +7,7 @@ Serverless Utils for fast development.
 Install via npm:
 
 ```sh
-npm install --save github:dustfoundation/lovely-serverless-utils#v0.0.6
+npm install --save github:dustfoundation/lovely-serverless-utils#v0.0.7
 ```
 
 # Features
@@ -28,23 +28,23 @@ npm install --save github:dustfoundation/lovely-serverless-utils#v0.0.6
 import { SuccessResponse, NotFoundResponse, InternalServerErrorResponse } from 'lovely-serverless-utils';
 
 // success response
-return new SuccessResponse();
+return SuccessResponse();
 
 // success response with body (authomatic JSON.stringify())
-return new SuccessResponse().setBody({ name: 'Elon' });
+return SuccessResponse().setBody({ name: 'Elon' });
 
 // success response with body and headers
-return new SuccessResponse().setBody({ name: 'Elon' }).setHeaders({ 'test-header': 1 });
-return new SuccessResponse().setBody({ name: 'Elon' }).setMultiValueHeaders({ 'test-header': [1] });
+return SuccessResponse().setBody({ name: 'Elon' }).setHeaders({ 'test-header': 1 });
+return SuccessResponse().setBody({ name: 'Elon' }).setMultiValueHeaders({ 'test-header': [1] });
 
 // success response with base64Encoded enabled (for files)
-return new SuccessResponse().setBase64Encoded();
+return SuccessResponse().setBase64Encoded();
 
 // not found response
-return new NotFoundResponse();
+return NotFoundResponse();
 
 // internal server error response
-return new InternalServerErrorResponse();
+return InternalServerErrorResponse();
 
 // and others...
 ```
@@ -65,17 +65,14 @@ return new InternalServerErrorResponse();
 ```ts
 import { ResponseBuilder } from 'lovely-serverless-utils';
 
-new ResponseBuilder(000).setBody(...);
+ResponseBuilder(000).setBody(...);
 ```
 
 ### Custom classes
 ```ts
-import { ResponseBuilder } from 'lovely-serverless-utils';
+import { ResponseBuilder, ResponseBuilderType } from 'lovely-serverless-utils';
 
-export class CustomResponse extends ResponseBuilder {
-  constructor() {
-    super(000); // status code
-    this.setBody(...); // default body
-  }
+export function CustomResponse(): ResponseBuilderType {
+  return ResponseBuilder(000).setBody(...);
 }
 ```

@@ -1,8 +1,5 @@
-import { ResponseBuilder } from '../..';
+import { ResponseBuilder, ResponseBuilderType } from '../..';
 
-export class BadRequestResponse extends ResponseBuilder {
-  constructor() {
-    super(400);
-    this.setBody({ message: 'Bad Request' });
-  }
+export function BadRequestResponse(): ResponseBuilderType {
+  return ResponseBuilder(400).setBody('Bad Request');
 }

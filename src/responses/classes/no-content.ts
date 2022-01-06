@@ -1,8 +1,5 @@
-import { ResponseBuilder } from '../..';
+import { ResponseBuilder, ResponseBuilderType } from '../..';
 
-export class NoContentResponse extends ResponseBuilder {
-  constructor() {
-    super(204);
-    this.setBody('No Content');
-  }
+export function NoContentResponse(): ResponseBuilderType {
+  return ResponseBuilder(204).setBody('No Content');
 }

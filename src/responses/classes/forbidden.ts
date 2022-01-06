@@ -1,8 +1,5 @@
-import { ResponseBuilder } from '../..';
+import { ResponseBuilder, ResponseBuilderType } from '../..';
 
-export class ForbiddenResponse extends ResponseBuilder {
-  constructor() {
-    super(403);
-    this.setBody({ message: 'Forbidden' });
-  }
+export function ForbiddenResponse(): ResponseBuilderType {
+  return ResponseBuilder(403).setBody('Forbidden');
 }

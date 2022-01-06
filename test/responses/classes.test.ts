@@ -16,36 +16,36 @@ import {
 
 describe('responses/classes', () => {
   it('SuccessResponse', () => {
-    expect(new SuccessResponse()).property('statusCode', 200);
+    expect(SuccessResponse()).property('statusCode', 200);
   });
   it('CreatedResponse', () => {
-    expect(new CreatedResponse()).property('statusCode', 201);
+    expect(CreatedResponse()).property('statusCode', 201);
   });
   it('AcceptedResponse', () => {
-    expect(new AcceptedResponse()).property('statusCode', 202);
+    expect(AcceptedResponse()).property('statusCode', 202);
   });
   it('NoContentResponse', () => {
-    expect(new NoContentResponse()).property('statusCode', 204);
+    expect(NoContentResponse()).property('statusCode', 204);
   });
   it('BadRequestResponse', () => {
-    expect(new BadRequestResponse()).property('statusCode', 400);
+    expect(BadRequestResponse()).property('statusCode', 400);
   });
   it('UnauthorizedResponse', () => {
-    expect(new UnauthorizedResponse()).property('statusCode', 401);
+    expect(UnauthorizedResponse()).property('statusCode', 401);
   });
   it('ForbiddenResponse', () => {
-    expect(new ForbiddenResponse()).property('statusCode', 403);
+    expect(ForbiddenResponse()).property('statusCode', 403);
   });
   it('NotFoundResponse', () => {
-    expect(new NotFoundResponse()).property('statusCode', 404);
+    expect(NotFoundResponse()).property('statusCode', 404);
   });
   it('InternalServerErrorResponse', () => {
-    expect(new InternalServerErrorResponse()).property('statusCode', 500);
+    expect(InternalServerErrorResponse()).property('statusCode', 500);
   });
   it('BadGatewayResponse', () => {
-    expect(new BadGatewayResponse()).property('statusCode', 502);
+    expect(BadGatewayResponse()).property('statusCode', 502);
   });
   it('GatewayTimeoutResponse', () => {
-    expect(new GatewayTimeoutResponse()).property('statusCode', 504);
+    expect(GatewayTimeoutResponse()).property('statusCode', 504);
   });
 });
