@@ -1,6 +1,6 @@
 {
   "name": "lovely-serverless-utils",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": "https://github.com/DustFoundation/lovely-serverless-utils",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,7 +19,6 @@
     "@dustfoundation/eslint-config": "github:dustfoundation/eslint-config#v0.0.4",
     "@dustfoundation/prettier-config": "github:dustfoundation/prettier-config#v0.0.2",
     "@dustfoundation/ts-config": "github:dustfoundation/ts-config#v0.0.2",
-    "@types/aws-lambda": "^8.10.88",
     "@types/chai": "^4.3.0",
     "@types/mocha": "^9.0.0",
     "@types/node": "^14.18.0",

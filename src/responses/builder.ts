@@ -1,5 +1,3 @@
-import { APIGatewayProxyResult } from 'aws-lambda';
-
 export const DEFAULT_HEADERS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Credentials': true,
@@ -18,7 +16,7 @@ export function ResponseBuilder(status: number): ResponseBuilderType {
       return this;
     },
 
-    setHeaders(headers: NonNullable<ResponseBuilderType['headers']>): ResponseBuilderType {
+    setHeaders(headers: ResponseBuilderType['headers']): ResponseBuilderType {
       this.headers = {
         ...DEFAULT_HEADERS,
         ...headers,
@@ -26,7 +24,7 @@ export function ResponseBuilder(status: number): ResponseBuilderType {
       return this;
     },
 
-    setMultiValueHeaders(headers: NonNullable<ResponseBuilderType['multiValueHeaders']>): ResponseBuilderType {
+    setMultiValueHeaders(headers: ResponseBuilderType['multiValueHeaders']): ResponseBuilderType {
       this.multiValueHeaders = headers;
       return this;
     },
@@ -39,11 +37,15 @@ export function ResponseBuilder(status: number): ResponseBuilderType {
 }
 
 export type ResponseBuilderType = {
-  statusCode: APIGatewayProxyResult['statusCode'];
+  statusCode: number;
   body: string;
-  headers?: APIGatewayProxyResult['headers'];
-  multiValueHeaders?: APIGatewayProxyResult['multiValueHeaders'];
-  isBase64Encoded?: APIGatewayProxyResult['isBase64Encoded'];
+  headers?: {
+    [header: string]: boolean | number | string;
+  };
+  multiValueHeaders?: {
+    [header: string]: Array<boolean | number | string>;
+  };
+  isBase64Encoded?: boolean;
   setBody(body: any): ResponseBuilderType;
   setHeaders(headers: NonNullable<ResponseBuilderType['headers']>): ResponseBuilderType;
   setMultiValueHeaders(headers: NonNullable<ResponseBuilderType['multiValueHeaders']>): ResponseBuilderType;
