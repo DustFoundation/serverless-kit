@@ -1,7 +1,7 @@
 export * from './functions/common/chunk';
 export * from './functions/common/groupBy';
 
-export * from './functions/serverless/validateRole';
+export * from './functions/serverless/hasRole';
 
 export * from './responses/builder';
 export * from './responses/classes/success';

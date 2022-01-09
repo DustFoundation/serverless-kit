@@ -15,7 +15,7 @@ npm install --save github:dustfoundation/lovely-serverless-utils#v1.0.0
 ## Utilities
 
 ### Serverless
-* [validateRole](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/functions/serverless/validateRole.ts)
+* [hasRole](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/functions/serverless/hasRole.ts)
 
 ### Common:
 * [chunk](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/functions/common/chunk.ts)
@@ -23,7 +23,7 @@ npm install --save github:dustfoundation/lovely-serverless-utils#v1.0.0
 
 ## Responses
 
-### Classes for frequently used status codes
+### Responses for frequently used status codes
 ```ts
 import { SuccessResponse, NotFoundResponse, InternalServerErrorResponse } from 'lovely-serverless-utils';
 
@@ -61,15 +61,14 @@ return InternalServerErrorResponse();
 * Bad Gateway [502]
 * Gateway Timeout [504]
 
-### Custom status codes
+### Response Builder for custom status codes
 ```ts
 import { ResponseBuilder } from 'lovely-serverless-utils';
 
 ResponseBuilder(000).setBody(...);
-```
 
-### Custom classes
-```ts
+// OR
+
 import { ResponseBuilder, ResponseBuilderType } from 'lovely-serverless-utils';
 
 export function CustomResponse(): ResponseBuilderType {
