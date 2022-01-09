@@ -1,5 +1,5 @@
 import { ResponseBuilder, ResponseBuilderType } from '../..';
 
 export function CreatedResponse(): ResponseBuilderType {
-  return ResponseBuilder(201).setBody('Created');
+  return ResponseBuilder(201).setBody({ message: 'Created' });
 }
