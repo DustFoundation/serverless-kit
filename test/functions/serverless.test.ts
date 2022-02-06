@@ -9,8 +9,8 @@ describe('functions/serverless', () => {
     expect(hasRole({ groups: ['user', 'admin'] }, ['admin'])).eql(true);
     expect(hasRole({ groups: ['user', 'moder'] }, ['user', 'admin'])).eql(true);
 
-    expect(hasRole({ groups: ['user', 'moder'] }, ['user', 'admin'], { multi: true })).eql(false);
-    expect(hasRole({ groups: ['user', 'moder'] }, ['user', 'moder', 'admin'], { multi: true })).eql(false);
-    expect(hasRole({ groups: ['user', 'moder'] }, ['user', 'moder'], { multi: true })).eql(true);
+    expect(hasRole({ groups: ['user', 'moder'] }, ['user', 'admin'], { all: true })).eql(false);
+    expect(hasRole({ groups: ['user', 'moder'] }, ['user', 'moder', 'admin'], { all: true })).eql(false);
+    expect(hasRole({ groups: ['user', 'moder'] }, ['user', 'moder'], { all: true })).eql(true);
   });
 });
