@@ -2,28 +2,27 @@
 
 Serverless Utils for fast development.
 
-# Installation
+## Installation
 
 Install via npm:
 
 ```sh
-npm install --save github:dustfoundation/lovely-serverless-utils#v1.0.0
+npm install --save github:dustfoundation/lovely-serverless-utils#v1.0.1
 ```
 
-# Features
+## Features
 
-## Utilities
+### Serverless Utilities
 
-### Serverless
 * [hasRole](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/functions/serverless/hasRole.ts)
 
-### Common:
+### Common Utilities
+
 * [chunk](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/functions/common/chunk.ts)
 * [groupBy](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/functions/common/groupBy.ts)
 
-## Responses
-
 ### Responses for frequently used status codes
+
 ```ts
 import { SuccessResponse, NotFoundResponse, InternalServerErrorResponse } from 'lovely-serverless-utils';
 
@@ -62,6 +61,7 @@ return InternalServerErrorResponse();
 * Gateway Timeout [504]
 
 ### Response Builder for custom status codes
+
 ```ts
 import { ResponseBuilder } from 'lovely-serverless-utils';
 

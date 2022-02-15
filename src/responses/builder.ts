@@ -48,6 +48,8 @@ export type ResponseBuilderType = {
   isBase64Encoded?: boolean;
   setBody(body: any): ResponseBuilderType;
   setHeaders(headers: NonNullable<ResponseBuilderType['headers']>): ResponseBuilderType;
-  setMultiValueHeaders(headers: NonNullable<ResponseBuilderType['multiValueHeaders']>): ResponseBuilderType;
+  setMultiValueHeaders(
+    headers: NonNullable<ResponseBuilderType['multiValueHeaders']>,
+  ): ResponseBuilderType;
   setBase64Encoded(): ResponseBuilderType;
 };
