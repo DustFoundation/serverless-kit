@@ -1,9 +1,10 @@
 export * from './functions/common/chunk';
-export * from './functions/common/groupBy';
+export * from './functions/common/group-by';
 
-export * from './functions/serverless/hasRole';
+export * from './functions/serverless/has-role';
 
 export * from './responses/builder';
+
 export * from './responses/classes/success';
 export * from './responses/classes/created';
 export * from './responses/classes/accepted';

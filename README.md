@@ -7,7 +7,7 @@ Serverless Utils for fast development.
 Install via npm:
 
 ```sh
-npm install --save github:dustfoundation/lovely-serverless-utils#v1.0.2
+npm install --save github:dustfoundation/lovely-serverless-utils#v1.1.0
 ```
 
 ## Features

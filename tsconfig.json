@@ -1,9 +1,12 @@
 {
   "extends": "@dustfoundation/ts-config",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "./dist",
   },
   "include": [
-    "./src"
+    "./src",
+  ],
+  "exclude": [
+    "**/*.test.ts"
   ]
 }

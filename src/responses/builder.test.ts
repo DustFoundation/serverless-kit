@@ -1,9 +1,8 @@
-import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import { DEFAULT_HEADERS, ResponseBuilder } from '../../src';
+import { DEFAULT_HEADERS, ResponseBuilder } from './builder';
 
 describe('responses/builder', () => {
-  it('ResponseBuilder', () => {
+  it('Success', () => {
     const _body = { name: 'Elon' };
     const _headers = { 'test-header': 1 };
     const _multiValueHeaders = { 'test-multi-value-header': [1] };
