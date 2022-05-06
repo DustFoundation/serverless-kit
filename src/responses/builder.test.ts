@@ -2,16 +2,16 @@ import { expect } from 'chai';
 import { DEFAULT_HEADERS, ResponseBuilder } from './builder';
 
 describe('responses/builder', () => {
-  it('Success', () => {
+  it('GIVEN valid data THEN success', () => {
     const _body = { name: 'Elon' };
     const _headers = { 'test-header': 1 };
     const _multiValueHeaders = { 'test-multi-value-header': [1] };
 
     const { statusCode, body, headers, multiValueHeaders, isBase64Encoded } = ResponseBuilder(200)
-      .setBody(_body)
-      .setHeaders(_headers)
-      .setMultiValueHeaders(_multiValueHeaders)
-      .setBase64Encoded();
+      .withBody(_body)
+      .withHeaders(_headers)
+      .withMultiValueHeaders(_multiValueHeaders)
+      .withBase64Encoded();
 
     expect(statusCode).eql(200);
     expect(body).eql(JSON.stringify(_body));

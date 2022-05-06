@@ -1,77 +1,57 @@
-# lovely-serverless-utils
+# @dustfoundation/serverless-kit
 
-Serverless Utils for fast development.
+**Serverless Kit** for fast development.
 
 ## Installation
 
-Install via npm:
-
 ```sh
-npm install --save github:DustFoundation/lovely-serverless-utils#v1.2.0
+npm install --save @dustfoundation/serverless-kit
 ```
 
 ## Features
 
-### Serverless Utilities
-
-* [hasRole](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/functions/serverless/hasRole.ts)
-
-### Common Utilities
-
-* [chunk](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/functions/common/chunk.ts)
-* [groupBy](https://github.com/DustFoundation/lovely-serverless-utils/blob/main/src/functions/common/groupBy.ts)
-
-### Responses for frequently used status codes
+### Authorizer Roles Validation
 
 ```ts
-import { SuccessResponse, NotFoundResponse, InternalServerErrorResponse } from 'lovely-serverless-utils';
-
-// success response
-return SuccessResponse();
-
-// success response with body (authomatic JSON.stringify())
-return SuccessResponse().setBody({ name: 'Elon' });
-
-// success response with body and headers
-return SuccessResponse().setBody({ name: 'Elon' }).setHeaders({ 'test-header': 1 });
-return SuccessResponse().setBody({ name: 'Elon' }).setMultiValueHeaders({ 'test-header': [1] });
-
-// success response with base64Encoded enabled (for files)
-return SuccessResponse().setBase64Encoded();
-
-// not found response
-return NotFoundResponse();
-
-// internal server error response
-return InternalServerErrorResponse();
-
-// and others...
+// User must have at least one of specified roles (moder OR admin)
+hasAnyRole(event.requestContext.authorizer, ['moder', 'admin']);
+// => boolean
 ```
 
-* Success [200]
-* Created [201]
-* Accepted [202]
-* No Content [204]
-* Bad Request [400]
-* Unauthorized [401]
-* Forbidden [403]
-* Not Found [404]
-* Internal Server Error [500]
-* Bad Gateway [502]
-* Gateway Timeout [504]
+```ts
+// User must have all specified roles (moder AND admin)
+hasAllRoles(event.requestContext.authorizer, ['moder', 'admin']);
+// => boolean
+```
 
-### Response Builder for custom status codes
+### Pretty Responses
 
 ```ts
-import { ResponseBuilder } from 'lovely-serverless-utils';
+// Success response
+return Success(); // 200
 
-ResponseBuilder(000).setBody(...);
+// Success response with body (authomatic JSON.stringify())
+return Success().withBody({ name: 'Elon' });
 
-// OR
+// Success response with body and headers
+return Success().withBody({ name: 'Elon' }).withHeaders({ 'test-header': 1 });
+return Success().withBody({ name: 'Elon' }).withMultiValueHeaders({ 'test-header': [1] });
 
-import { ResponseBuilder, ResponseBuilderType } from 'lovely-serverless-utils';
+// Success response with base64Encoded enabled (for files)
+return Success().withBase64Encoded();
 
-export function CustomResponse(): ResponseBuilderType {
-  return ResponseBuilder(000).setBody(...);
-}
+// Other responses (withBody and other props can also be applied)
+return Created(); // 201
+return Accepted(); // 202
+return NoContent(); // 204
+return BadRequest(); // 400
+return Unauthorized(); // 401
+return Forbidden(); // 403
+return NotFound(); // 404
+return InternalServerError(); // 500
+return BadGateway(); // 502
+return GatewayTimeout(); // 504
+
+// Custom status codes
+return ResponseBuilder(000).withBody(...); // 000
 ```
