@@ -1,93 +1,93 @@
 import { expect } from 'chai';
 import {
-  AcceptedResponse,
-  BadGatewayResponse,
-  BadRequestResponse,
-  CreatedResponse,
-  ForbiddenResponse,
-  GatewayTimeoutResponse,
-  InternalServerErrorResponse,
-  NoContentResponse,
-  NotFoundResponse,
-  SuccessResponse,
-  UnauthorizedResponse,
-} from '../../src';
+  Accepted,
+  BadGateway,
+  BadRequest,
+  Created,
+  Forbidden,
+  GatewayTimeout,
+  InternalServerError,
+  NoContent,
+  NotFound,
+  Success,
+  Unauthorized,
+} from './classes';
 
 describe('responses/classes', () => {
-  it('SuccessResponse', () => {
-    const { statusCode, body } = SuccessResponse();
+  it('Success', () => {
+    const { statusCode, body } = Success();
 
     expect(statusCode).eql(200);
     expect(body).eql(JSON.stringify({ message: 'Ok' }));
   });
 
-  it('CreatedResponse', () => {
-    const { statusCode, body } = CreatedResponse();
+  it('Created', () => {
+    const { statusCode, body } = Created();
 
     expect(statusCode).eql(201);
     expect(body).eql(JSON.stringify({ message: 'Created' }));
   });
 
-  it('AcceptedResponse', () => {
-    const { statusCode, body } = AcceptedResponse();
+  it('Accepted', () => {
+    const { statusCode, body } = Accepted();
 
     expect(statusCode).eql(202);
     expect(body).eql(JSON.stringify({ message: 'Accepted' }));
   });
 
-  it('NoContentResponse', () => {
-    const { statusCode, body } = NoContentResponse();
+  it('NoContent', () => {
+    const { statusCode, body } = NoContent();
 
     expect(statusCode).eql(204);
     expect(body).eql(JSON.stringify({ message: 'No Content' }));
   });
 
-  it('BadRequestResponse', () => {
-    const { statusCode, body } = BadRequestResponse();
+  it('BadRequest', () => {
+    const { statusCode, body } = BadRequest();
 
     expect(statusCode).eql(400);
     expect(body).eql(JSON.stringify({ message: 'Bad Request' }));
   });
 
-  it('UnauthorizedResponse', () => {
-    const { statusCode, body } = UnauthorizedResponse();
+  it('Unauthorized', () => {
+    const { statusCode, body } = Unauthorized();
 
     expect(statusCode).eql(401);
     expect(body).eql(JSON.stringify({ message: 'Unauthorized' }));
   });
 
-  it('ForbiddenResponse', () => {
-    const { statusCode, body } = ForbiddenResponse();
+  it('Forbidden', () => {
+    const { statusCode, body } = Forbidden();
 
     expect(statusCode).eql(403);
     expect(body).eql(JSON.stringify({ message: 'Forbidden' }));
   });
 
-  it('NotFoundResponse', () => {
-    const { statusCode, body } = NotFoundResponse();
+  it('NotFound', () => {
+    const { statusCode, body } = NotFound();
 
     expect(statusCode).eql(404);
     expect(body).eql(JSON.stringify({ message: 'Not Found' }));
   });
 
-  it('InternalServerErrorResponse', () => {
-    const { statusCode, body } = InternalServerErrorResponse();
+  it('InternalServerError', () => {
+    const { statusCode, body } = InternalServerError();
 
     expect(statusCode).eql(500);
     expect(body).eql(JSON.stringify({ message: 'Internal Server Error' }));
   });
 
-  it('BadGatewayResponse', () => {
-    const { statusCode, body } = BadGatewayResponse();
+  it('BadGateway', () => {
+    const { statusCode, body } = BadGateway();
 
     expect(statusCode).eql(502);
     expect(body).eql(JSON.stringify({ message: 'Bad Gateway' }));
   });
 
-  it('GatewayTimeoutResponse', () => {
-    const { statusCode, body } = GatewayTimeoutResponse();
+  it('GatewayTimeout', () => {
+    const { statusCode, body } = GatewayTimeout();
 
     expect(statusCode).eql(504);
-    expect(body).eql(JSON.stringify({ message: 'Timeout' }));
+    expect(body).eql(JSON.stringify({ message: 'Gateway Timeout' }));
   });
 });
