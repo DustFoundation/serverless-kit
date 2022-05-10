@@ -14,20 +14,20 @@
     "lint": "eslint . --fix"
   },
   "devDependencies": {
-    "@dustfoundation/eslint-config": "^2.3.1",
-    "@dustfoundation/prettier-config": "^2.3.0",
-    "@dustfoundation/ts-config": "^2.3.1",
+    "@dustfoundation/eslint-config": "^2.4.0",
+    "@dustfoundation/prettier-config": "^2.4.0",
+    "@dustfoundation/ts-config": "^2.4.0",
     "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.1",
-    "@types/node": "^14.18.16",
+    "@types/node": "^16.11.33",
     "chai": "^4.3.6",
-    "eslint": "^8.14.0",
+    "eslint": "^8.15.0",
     "mocha": "^9.2.2",
     "prettier": "^2.6.2",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   }
 }
