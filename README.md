@@ -1,5 +1,9 @@
 # @dustfoundation/serverless-kit
 
+![CI](https://github.com/DustFoundation/serverless-kit/actions/workflows/ci.yml/badge.svg)
+[![NPM Version](https://badgen.net/npm/v/@dustfoundation/serverless-kit)](https://npmjs.com/package/@dustfoundation/serverless-kit)
+[![Minimum Node.js Version](https://badgen.net/npm/node/@dustfoundation/serverless-kit)](https://npmjs.com/package/@dustfoundation/serverless-kit)
+
 **Serverless Kit** for fast development.
 
 ## Installation
