@@ -1,6 +1,6 @@
 {
   "name": "@dustfoundation/serverless-kit",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Serverless Kit for fast development",
   "repository": "https://github.com/DustFoundation/serverless-kit",
   "main": "dist/index.js",
