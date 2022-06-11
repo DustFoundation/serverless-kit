@@ -17,14 +17,14 @@ npm install --save @dustfoundation/serverless-kit
 ### Authorizer Groups Validation
 
 ```ts
-// User must have at least one of specified groups (moder OR admin)
-hasAnyGroup(event.requestContext.authorizer, ['moder', 'admin']);
+// User must have at least one of specified groups (moderator OR admin)
+hasAnyGroup(event.requestContext.authorizer, ['moderator', 'admin']);
 // => boolean
 ```
 
 ```ts
-// User must have all specified groups (moder AND admin)
-hasAllGroups(event.requestContext.authorizer, ['moder', 'admin']);
+// User must have all specified groups (moderator AND admin)
+hasAllGroups(event.requestContext.authorizer, ['moderator', 'admin']);
 // => boolean
 ```
 

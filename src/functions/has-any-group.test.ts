@@ -12,6 +12,6 @@ describe('functions/hasAnyGroup', () => {
 
   it('GIVEN user with >1 of required groups THEN true', () => {
     expect(hasAnyGroup({ groups: ['user', 'admin'] }, ['admin'])).eql(true);
-    expect(hasAnyGroup({ groups: ['user', 'moder'] }, ['user', 'admin'])).eql(true);
+    expect(hasAnyGroup({ groups: ['user', 'moderator'] }, ['user', 'admin'])).eql(true);
   });
 });
