@@ -52,6 +52,8 @@ return BadRequest(); // 400
 return Unauthorized(); // 401
 return Forbidden(); // 403
 return NotFound(); // 404
+return Conflict(); // 409
+return TooManyRequests(); // 429
 return InternalServerError(); // 500
 return BadGateway(); // 502
 return GatewayTimeout(); // 504
