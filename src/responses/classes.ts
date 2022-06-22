@@ -32,6 +32,14 @@ export function NotFound(): ResponseBuilderType {
   return ResponseBuilder(404).withBody({ message: 'Not Found' });
 }
 
+export function Conflict(): ResponseBuilderType {
+  return ResponseBuilder(409).withBody({ message: 'Conflict' });
+}
+
+export function TooManyRequests(): ResponseBuilderType {
+  return ResponseBuilder(429).withBody({ message: 'Too Many Requests' });
+}
+
 export function InternalServerError(): ResponseBuilderType {
   return ResponseBuilder(500).withBody({ message: 'Internal Server Error' });
 }
