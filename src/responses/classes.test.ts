@@ -3,6 +3,7 @@ import {
   Accepted,
   BadGateway,
   BadRequest,
+  Conflict,
   Created,
   Forbidden,
   GatewayTimeout,
@@ -10,6 +11,7 @@ import {
   NoContent,
   NotFound,
   Success,
+  TooManyRequests,
   Unauthorized,
 } from './classes';
 
@@ -68,6 +70,20 @@ describe('responses/classes', () => {
 
     expect(statusCode).eql(404);
     expect(body).eql(JSON.stringify({ message: 'Not Found' }));
+  });
+
+  it('Conflict', () => {
+    const { statusCode, body } = Conflict();
+
+    expect(statusCode).eql(409);
+    expect(body).eql(JSON.stringify({ message: 'Conflict' }));
+  });
+
+  it('TooManyRequests', () => {
+    const { statusCode, body } = TooManyRequests();
+
+    expect(statusCode).eql(429);
+    expect(body).eql(JSON.stringify({ message: 'Too Many Requests' }));
   });
 
   it('InternalServerError', () => {
