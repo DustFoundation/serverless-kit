@@ -18,13 +18,13 @@ npm install --save @dustfoundation/serverless-kit
 
 ```ts
 // User must have at least one of specified groups (moderator OR admin)
-hasAnyGroup(event.requestContext.authorizer, ['moderator', 'admin']);
+hasAnyGroup(event.requestContext.authorizer!.groups.split(';'), ['moderator', 'admin']);
 // => boolean
 ```
 
 ```ts
 // User must have all specified groups (moderator AND admin)
-hasAllGroups(event.requestContext.authorizer, ['moderator', 'admin']);
+hasAllGroups(event.requestContext.authorizer!.groups.split(';'), ['moderator', 'admin']);
 // => boolean
 ```
 
