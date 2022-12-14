@@ -28,6 +28,16 @@ hasAllGroups(event.requestContext.authorizer!.groups.split(';'), ['moderator', '
 // => boolean
 ```
 
+### Parse Request Body (JSON)
+  
+```ts
+const body = parseRequestBody<{ name: 'Elon' }>(event.body, event.headers);
+if (!body) {
+  return BadRequest();
+}
+// => { name: 'Elon' } | null
+```
+
 ### Pretty Responses
 
 ```ts
