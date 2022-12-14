@@ -5,6 +5,6 @@ on:
 
 jobs:
   publish:
-    uses: DustFoundation/shared-actions/.github/workflows/publish-npm.yml@v1.1.1
+    uses: DustFoundation/shared-actions/.github/workflows/publish-npm.yml@v1.1.5
     secrets:
       npm-publish-token: ${{ secrets.NPM_PUBLISH_TOKEN }}

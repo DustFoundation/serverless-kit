@@ -1,4 +1,5 @@
-import { ResponseBuilder, ResponseBuilderType } from './builder';
+import type { ResponseBuilderType } from './builder';
+import { ResponseBuilder } from './builder';
 
 export function Success(): ResponseBuilderType {
   return ResponseBuilder(200).withBody({ message: 'Ok' });
