@@ -31,7 +31,8 @@ hasAllGroups(event.requestContext.authorizer!.groups.split(';'), ['moderator', '
 ### Parse Request Body (JSON)
   
 ```ts
-const body = parseRequestBody<{ name: 'Elon' }>(event.body, event.headers);
+const body = parseRequestBody<{ name: 'Elon' }>(event.body, event.headers); // Check Content-Type=application/json
+const body = parseRequestBody<{ name: 'Elon' }>(event.body, false); // Skip Content-Type=application/json
 if (!body) {
   return BadRequest();
 }

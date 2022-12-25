@@ -10,6 +10,7 @@ describe('functions/parseRequestBody', () => {
     expect(parseRequestBody<typeof body>(JSON.stringify(body), { 'Content-Type': 'application/json' })).eql(
       body,
     );
+    expect(parseRequestBody<typeof body>(JSON.stringify(body), false)).eql(body);
   });
 
   it('GIVEN invalid body THEN null', () => {
@@ -18,6 +19,7 @@ describe('functions/parseRequestBody', () => {
 
   it('GIVEN empty body THEN null', () => {
     expect(parseRequestBody(null, { 'Content-Type': 'application/json' })).eql(null);
+    expect(parseRequestBody(undefined, { 'Content-Type': 'application/json' })).eql(null);
   });
 
   it('GIVEN invalid content type THEN null', () => {
