@@ -6,21 +6,16 @@ export function parseRequestBody<T>(
     return null;
   }
 
-  if (
-    headers !== false &&
-    headers['content-type'] !== 'application/json' &&
-    headers['Content-Type'] !== 'application/json'
-  ) {
-    return null;
+  if (headers !== false) {
+    const contentType = headers['Content-Type'] ?? headers['content-type'];
+    if (contentType !== 'application/json') {
+      return null;
+    }
   }
 
   try {
     return JSON.parse(body);
-  } catch (e) {
-    if (e instanceof SyntaxError) {
-      return null;
-    }
-
-    throw e;
+  } catch {
+    return null;
   }
 }
